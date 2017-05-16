@@ -1,0 +1,20 @@
+<html>
+<head>
+</head>
+<body>
+</body>
+    <script>
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://localhost:3000');
+    xhr.onreadystatechange = function() {
+	if (xhr.readyState == XMLHttpRequest.DONE) {
+	    let db = JSON.parse(xhr.responseText);
+            Object.keys(db.refs).forEach(ref => {
+                // db looks like:
+                // { refs: { "master": 'ab0ef..." } commits: { 'ab0ef...': { author, date, message } } }
+            })    
+	}
+    };
+    xhr.send();
+    </script>
+</html>
