@@ -54,7 +54,7 @@ function getCommits(cb) {
                                               author: c.author().name(),
                                               date: c.date(),
                                               message: c.message(),
-                                              parents: c.parents()
+                                              parents: c.parents().map(oid => oid.tostrS())
                                           };
                                       });
                                       resolve();
