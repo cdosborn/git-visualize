@@ -2,6 +2,8 @@ let http = require('http');
 let Git = require('nodegit');
 let path = require('path');
 
+const repoPath = process.argv[2] || '.';
+
 http.createServer((req, resp) => {
     debugger;
     let x = 1;
@@ -14,7 +16,6 @@ http.createServer((req, resp) => {
 }).listen(3000);
 
 function getCommits(cb) {
-    let repoPath = path.resolve('.');
     Git.Repository.open(repoPath)
       .then(function(repo) {
         repo.getReferences(Git.Reference.TYPE.OID)
