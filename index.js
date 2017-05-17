@@ -14,7 +14,7 @@ http.createServer((req, resp) => {
 }).listen(3000);
 
 function getCommits(cb) {
-    let repoPath = path.resolve(<PATH TO SOME LOCAL REPO>)
+    let repoPath = path.resolve('.');
     Git.Repository.open(repoPath)
       .then(function(repo) {
         repo.getReferences(Git.Reference.TYPE.OID)
