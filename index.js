@@ -5,8 +5,6 @@ let path = require('path');
 const repoPath = process.argv[2] || '.';
 
 http.createServer((req, resp) => {
-    debugger;
-    let x = 1;
     resp.writeHead(200, {
 	"Content-Type": "application/json",
 	"Access-Control-Allow-Origin": "*"
